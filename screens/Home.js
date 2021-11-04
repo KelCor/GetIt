@@ -11,42 +11,48 @@ export default function Home(params) {
       title: 'Bike',
       image: require('../assets/images/bike.jpg'),
       price: 350,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
     {
       id: 2,
       title: 'Bench Press',
       image: require('../assets/images/strength-gym-equipment-500x500.jpg'),
       price: 500,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
     {
       id: 3,
       title: 'Treadmill',
       image: require('../assets/images/treadmill.jpg'),
       price: 1000,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
     {
       id: 4,
       title: 'Skipping rope',
       image: require('../assets/images/rope.jpg'),
       price: 25,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
     {
       id: 5,
       title: 'Punching bag',
       image: require('../assets/images/bag.jpeg'),
       price: 500,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
     {
       id: 6,
       title: '36KG Dumbbells',
       image: require('../assets/images/bells.jpg'),
       price: 800,
+      about: 'Ride on this quality product and track your mileage, blood pressure and break your old records! You definitely want to have this in your arsenal for your workout journey!',
     },
   ];
 
   const renderGridthings = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => navigation.navigate('')}>
+      <TouchableOpacity onPress = {() => {navigation.navigate("Details", item);}}>
         <View style = {styles.productlist} >
         <View style={{alignItems:'flex-end'}}>
           <View 
