@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Login from './screens/Login';
 import Home from './screens/Home';
+import Welcome from './screens/Welcome';
 
 
 export default function App() { 
@@ -14,8 +15,9 @@ export default function App() {
       <NavigationContainer>
         <MainNavigator.Navigator 
           screenOptions = {{headerShown: false}} 
-          initialRouteName = "Login"
+          initialRouteName = "Welcome"
         >
+          <MainNavigator.Screen name = "Welcome" component = {Welcome} />
           <MainNavigator.Screen name = "Login" component={Login} />
           <MainNavigator.Screen name = "Home" component = {Home}/>
         </MainNavigator.Navigator>
@@ -25,10 +27,5 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
