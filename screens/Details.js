@@ -46,7 +46,7 @@ const Details= ({navigation,route}) => {
                     <Text style={{color: "grey",fontSize:16, lineHeight: 22, marginTop: 20}}>{item.about}
                     </Text>
                     <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'center',}}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress = {() => {navigation.navigate("Cart");}}>
                             <View style = {styles.cartadd}>
                                 <Text style = {{fontSize:20, marginHorizontal: 10, fontWeight: 'bold', color: 'white'}}> Add to Cart </Text>
                             </View>

@@ -48,6 +48,20 @@ export default function Home(params) {
       price: 800,
       about: "Let's see those biceps get ripped!! No pain, no gain! This is a must have equipment and you won't regret having this baby work on your biceps.",
     },
+    {
+      id: 7,
+      title: '35KG Dumbbells',
+      image: require('../assets/images/bells.jpg'),
+      price: 800,
+      about: "Let's see those biceps get ripped!! No pain, no gain! This is a must have equipment and you won't regret having this baby work on your biceps.",
+    },
+    {
+      id: 8,
+      title: '35KG Dumbbells',
+      image: require('../assets/images/bells.jpg'),
+      price: 800,
+      about: "Let's see those biceps get ripped!! No pain, no gain! This is a must have equipment and you won't regret having this baby work on your biceps.",
+    },
   ];
 
   const renderGridthings = ({ item }) => {
