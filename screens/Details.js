@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import COLORS from '../consts/colors'
 
@@ -9,7 +9,17 @@ const Details= ({navigation,route}) => {
         <View style={{flex: 1, backgroundColor: 'white'}}>
             <View style={styles.header}>
                 <Ionicons name="arrow-back" size={28} color="black" onPress = {() => {navigation.goBack();}} />
-                <MaterialIcons name="add-shopping-cart" size={28} color="black" />
+                {/* Navigate to shopping cart screen */}
+                <View>
+                <View style={{
+                    position: 'absolute', height:30, width:30,
+                    borderRadius: 15, backgroundColor: 'rgba(0,0,0,0.2)', right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000
+                }}>
+                    <Text style={{color: 'white', fontWeight: 'bold'}}>0</Text>
+                </View>
+                
+                    <MaterialIcons name="add-shopping-cart" size={28} color="black" onPress = {() => {navigation.navigate("Cart");}} />
+                </View>
             </View>
             <View style={styles.imageContainer}>
                 <Image source={item.image} style={{resizeMode: "contain", flex:1}}/>
@@ -17,8 +27,8 @@ const Details= ({navigation,route}) => {
             <View style={styles.detailsContainer}>
                 <View style={{marginLeft: 20, flexDirection: 'row', alignItems: 'flex-end',
             }}>
-                    <View style={styles.line}/ >
-                    <Text style={{fontSize:18,      fontWeight: 'bold'}}>
+                    <View style={styles.line} />
+                    <Text style={{fontSize:18, fontWeight: 'bold'}}>
                         Best Choice
                     </Text>
                     
@@ -32,22 +42,15 @@ const Details= ({navigation,route}) => {
                         </View>
                 </View>
                 <View style={{paddingHorizontal: 20, marginTop: 10}}>
-                    <Text style = {{fontSize:20,      fontWeight: 'bold'}}>About</Text>
+                    <Text style = {{fontSize:20,fontWeight: 'bold'}}>About</Text>
                     <Text style={{color: "grey",fontSize:16, lineHeight: 22, marginTop: 20}}>{item.about}
                     </Text>
-                    <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'space-between',}}>
-                        <View style = {{flexDirection: 'row', alignItems: 'center'}}>
-                            <View style={styles.Btnborder}>
-                                <Text style = {styles.textbtn}>-</Text>
+                    <View style={{marginTop: 20, flexDirection: 'row', justifyContent: 'center',}}>
+                        <TouchableOpacity>
+                            <View style = {styles.cartadd}>
+                                <Text style = {{fontSize:20, marginHorizontal: 10, fontWeight: 'bold', color: 'white'}}> Add to Cart </Text>
                             </View>
-                            <Text style = {{fontSize:20, marginHorizontal: 10, fontWeight: 'bold'}}> 0 </Text>
-                            <View style={styles.Btnborder}>
-                                <Text style = {styles.textbtn}>+</Text>
-                            </View>
-                        </View>
-                        <View style ={styles.buybtn}>
-                            <Text style = {{color: COLORS.white, fontWeight: 'bold', fontSize: 18,}}>Buy</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -108,6 +111,14 @@ const styles = StyleSheet.create({
     },
     buybtn:{
         width:150,
+        height: 50,
+        backgroundColor: COLORS.dark,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 30,
+    },
+    cartadd:{
+        width: 200,
         height: 50,
         backgroundColor: COLORS.dark,
         justifyContent: 'center',
